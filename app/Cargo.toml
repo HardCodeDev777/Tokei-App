@@ -1,0 +1,17 @@
+[package]
+name = "Tokei-App"
+version = "1.0.0"
+edition = "2024"
+build = "build.rs"
+authors = ["HardCodeDev"]
+license = "MIT"
+repository = "https://github.com/HardCodeDev777/Tokei-App"
+
+[dependencies]
+slint = "1.12.1"
+tokei = "12.1.2"
+serde = { version = "1.0.104", features = ["derive"] }
+serde_json = "1.0.140"
+
+[build-dependencies]
+slint-build = "1.12.1"

@@ -1,0 +1,52 @@
+import { Button, VerticalBox, LineEdit} from "std-widgets.slint";
+
+export component MainWindow inherits Window {
+    in property <string> lang_text: "Here will be repository statistic";
+    callback count_lines(string);
+
+    background: #06020c;
+
+    VerticalBox {
+        spacing: 100px;
+        Text {
+            text: "Tokei App";
+            font-family: "Verdana";
+            horizontal-alignment: center;
+            font-size: 34px;
+            font-weight: 600;
+            color: #ffffff;
+        }       
+
+        VerticalBox {
+            Text{
+                text: lang_text;
+                font-family: "Verdana";
+                horizontal-alignment: center;
+                font-size: 24px;
+                font-weight: 600;
+                color: #ffffff;
+            }
+        }
+
+        VerticalBox {  
+            padding: 20px;
+            spacing: 20px;
+
+            input := LineEdit {
+                placeholder-text: "Enter absolute path to repository";
+                font-size: 16px;
+                height: 35px;
+                horizontal-alignment: center;
+            }
+
+            Button {
+                text: "Count";
+                padding-top: 30px;
+                height: 35px;
+                clicked => {
+                    root.count_lines(input.text);
+                }
+            }
+        }
+    }
+}
